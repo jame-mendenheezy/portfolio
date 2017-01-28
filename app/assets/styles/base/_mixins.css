@@ -1,0 +1,107 @@
+/*@define-mixin atSmall {
+  @media (min-width: 530px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {
+.main-nav a {
+  font-size: 1.2em;
+  }
+  .row {
+    max-width: 100vw;
+    margin: 0 auto;
+  }
+  .tagline {
+    font-size: 1.85em;
+
+  }
+  .card {}
+}
+
+@media (min-width: 1025px) {
+  .main-header {
+    width: 100vw;
+    position: fixed;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25), -1px 6px 6px rgba(0, 0, 0, 0.50);
+    z-index: 2;
+    background-color: black;
+  }
+.main-nav a {
+  font-size: 1.5em;
+  }
+  .tagline {
+    font-size: 2.5em;
+    font-weight: thin;
+  }
+}
+
+
+/* started with a mobile first */
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {
+  .main-header,
+  /* grouping main-nav with main-header switches main-nav from being a flex item to a flex container */
+  .main-nav,
+  .row,
+  nav,
+  ul/* new container added for col */
+  {
+    display: flex;
+  }
+  .main-header {
+    flex-direction: column;
+    /* stacked nav and header */
+    align-items: center;
+    order: 2;
+  }
+  .col {
+    /* new rule for col */
+    flex: 1 50%;
+    /* primary col was too big and secondary col was too narrow...now they are equal width */
+    /* after adding the third col we set a 50% flex-basis and wrapped the row below */
+  }
+  .row {
+    flex-wrap: wrap;
+    /* for multi line and tertiary to break below */
+  }
+  .secondary {
+    order: -1;
+    /* primary content col is now centered on screens above 769px  */
+  }
+}
+
+@media (min-width: 1025px) {
+  .main-header {
+    flex-direction: row;
+    /* header and nav on the same line */
+    justify-content: space-between/* aligns name to the left and main-nav to the right and add extra space inbetween */
+  }
+  .col {
+    flex-basis: 0;
+    /* three col layout on 1025px or wider */
+  }
+  .primary {
+    flex: 2;
+    /* for the larger breakpoint we doubled the space taken from the primary col */
+    flex-grow: 1.4;
+    /* slightly larger primary at three col layout */
+  }
+}

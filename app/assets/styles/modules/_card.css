@@ -1,0 +1,80 @@
+/* GENERAL STYLES FOR CARD, HOVER, AND OVERLAY */
+
+.card {
+  font-size: .90em;
+  display: block;
+  border-radius: 6px;
+  margin: 15px;
+  width: 95%;
+  height: 180px;
+  overflow: hidden;
+  background-color: $change-me2;
+  text-align: center;
+  position: relative;
+  transition: .25s linear;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
+  h1 {
+    font-weight: 500;
+    color: white;
+  }
+  h2{
+    font-size: 0em;
+    opacity: 0;
+    margin: -5%;
+  }
+  h3 {
+    opacity: 0;
+    font-weight: bold;
+  }
+  p {
+    opacity: 1;
+    font-size: 1.5em;
+  }
+
+}
+
+.card:hover {
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25), -1px 6px 6px rgba(0, 0, 0, 0.50);
+  background: lighten($change-me, 35%);
+  font-size: 1.2em;
+  transform: translateY(-20%);
+  h1 {
+    font-size: .01em;
+    transition: .75s ease-out;
+  }
+  h2 {
+      margin: 5%;
+      font-size: 1em;
+      opacity:1;
+      font-weight: 700;
+      color: rgba($change-me, .75);
+      text-shadow:
+      1px 2px 60px lighten($change-me, 15%),
+      0px 0px 0px darken($change-me, 55%),
+      0px 0px 2px lighten($change-me, 50%);
+      transition: .15s ease-in;
+  }
+  p {
+    opacity: 0;
+    font-weight: 700;
+    color: rgba($change-me, .75);
+    text-shadow:
+    1px 2px 60px lighten($change-me, 15%),
+    0px 0px 0px darken($change-me, 70%),
+    0px 0px 30px lighten($change-me, 50%);
+    transition: .1s ease-in;
+  }
+  h3, a {
+    opacity: 1;
+    font-weight: 400;
+    color: rgba($change-me2, .75);
+    text-shadow:
+    1px 2px 60px lighten($change-me2, 15%),
+    0px 0px 0px darken($change-me2, 70%),
+    0px 0px 30px lighten($change-me2, 50%);
+    transition: .15s ease-in;
+  }
+
+}
+
+
